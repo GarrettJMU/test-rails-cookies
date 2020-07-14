@@ -9,17 +9,14 @@ class CustomDomainCookie
 
   def call(env)
     host = env["HTTP_HOST"].split(':').first
-    puts "1##################################"
-    puts host
-    puts "1##################################"
-    puts "2##################################"
-    puts env.inspect
-    puts "2##################################"
-    env["rack.session.options"][:domain] = custom_domain?(host) ? ".#{host}" : "#{@default_domain}"
-    @app.call(env)
+    allowed_hosts = ['test1.garretthughes.com', 'test2.garretthughes.com']
+    allowed_hosts.each do |allowed_host|
+      env["rack.session.options"][:domain] = ".#{allowed_host}"
+      @app.call(env)
+    end
   end
 
-  def custom_domain?(host)
-    host !~ /#{@default_domain.sub(/^\./, '')}/i
-  end
+  # def custom_domain?(host)
+  #   host !~ /#{@default_domain.sub(/^\./, '')}/i
+  # end
 end
