@@ -1,4 +1,4 @@
 Rails.application.config.session_store :cookie_store,
                                        key: '_test-web_session',
                                        expire_after: 14.days,
-                                       same_site: :lax
+                                       same_site: :strict
