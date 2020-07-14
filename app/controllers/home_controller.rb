@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
     @session = session[:id]
+    @cookies = cookies
   end
 
   def change_session

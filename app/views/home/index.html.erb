@@ -1,4 +1,5 @@
 <h1>Hello, your session id is <%= @session || "not set yet" %></h1>
+
 <%= form_with(url: "/1", method: :post) do %>
   <div>
     <%= submit_tag "Set session to 1"%>
@@ -19,10 +20,17 @@
     <%= submit_tag "Delete session id"%>
   </div>
 <% end %>
-<h2>Links</h2>
+<h1>Links</h1>
 <div>
   <ul>
     <li><a href="http://test1.garretthughes.com/">test 1</a></li>
     <li><a href="http://test2.garretthughes.com/">test 2</a></li>
   </ul>
 </div>
+
+<h1>Cookies sent with request:</h1>
+<ul>
+<% @cookies.each do |cookie| %>
+  <li><%= cookie %></li>
+<% end %>
+</ul>
