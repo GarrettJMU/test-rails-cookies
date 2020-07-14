@@ -9,6 +9,12 @@ class CustomDomainCookie
 
   def call(env)
     host = env["HTTP_HOST"].split(':').first
+    puts "1##################################"
+    puts host
+    puts "1##################################"
+    puts "2##################################"
+    puts env.inspect
+    puts "2##################################"
     env["rack.session.options"][:domain] = custom_domain?(host) ? ".#{host}" : "#{@default_domain}"
     @app.call(env)
   end
