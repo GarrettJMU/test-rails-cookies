@@ -28,7 +28,7 @@
   </ul>
 </div>
 
-<h1>Cookies sent with request:</h1>
+<h1>Cookies sent with request from referer <%= @referer || "no referer sent" %></h1>
 <ul>
 <% @cookies.each do |cookie| %>
   <li><%= cookie %></li>
