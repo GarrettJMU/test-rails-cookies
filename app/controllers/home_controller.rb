@@ -1,7 +1,8 @@
 class HomeController < ApplicationController
   def index
     @session = session[:id]
-    @cookies = cookies
+    @cookies = request.cookies
+
     @referer = request.referer
   end
 
