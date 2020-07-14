@@ -25,12 +25,14 @@
   <ul>
     <li><a href="http://test1.garretthughes.com/">test 1</a></li>
     <li><a href="http://test2.garretthughes.com/">test 2</a></li>
+    <li><a href="http://garretthughes.com/">test 2</a></li>
   </ul>
 </div>
 
-<h1>Cookies sent with request from referer <%= @referer || "no referer sent" %></h1>
+<h1>Cookies sent with request from referer <%= @referer || 'no referer sent' %></h1>
 <ul>
 <% @cookies.each do |cookie| %>
-  <li><%= cookie %></li>
+  <li><%= cookie || 'no domain set' %></li>
 <% end %>
+
 </ul>
