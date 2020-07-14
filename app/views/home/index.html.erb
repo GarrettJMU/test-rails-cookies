@@ -1,0 +1,21 @@
+<h1>Hello, your session id is <%= @session || "not set yet" %></h1>
+<%= form_with(url: "/1", method: :post) do %>
+  <div>
+    <%= submit_tag "Set session to 1"%>
+  </div>
+<% end %>
+<%= form_with(url: "/2", method: :post) do %>
+  <div>
+    <%= submit_tag "Set session to 2"%>
+  </div>
+<% end %>
+<%= form_with(url: "/3", method: :post) do %>
+  <div>
+    <%= submit_tag "Set session to 3"%>
+  </div>
+<% end %>
+<%= form_with(url: "/delete", method: :post) do %>
+  <div>
+    <%= submit_tag "Delete session id"%>
+  </div>
+<% end %>
